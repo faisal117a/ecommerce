@@ -1,0 +1,29 @@
+# Security and URL Rewriting
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(database\.sql|\.htaccess|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect config directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^config/ - [F,L]
+</IfModule>
+
+# Prevent access to PHP files in includes (optional - uncomment if needed)
+# <FilesMatch "\.php$">
+#     <If "%{REQUEST_URI} =~ m#/includes/#">
+#         Order allow,deny
+#         Deny from all
+#     </If>
+# </FilesMatch>
+
+# Enable error pages (optional)
+# ErrorDocument 404 /404.php
+# ErrorDocument 500 /500.php
+
