@@ -335,25 +335,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Pre-fill form if user is logged in
 $user = isLoggedIn() ? getCurrentUser() : null;
+$pageTitle = 'Checkout - Cur1 Fashion';
+include __DIR__ . '/../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Cur1 Fashion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/shop.css">
-</head>
-<body>
-<header class="shadow-sm sticky-top bg-white">
-    <nav class="navbar navbar-expand-lg container py-3">
-        <a class="navbar-brand fw-bold text-primary" href="../index.php">
-            Cur1<span class="text-dark">Fashion</span>
-        </a>
-    </nav>
-</header>
 
 <main class="py-5 bg-light min-vh-100">
     <div class="container">
@@ -640,15 +624,6 @@ $user = isLoggedIn() ? getCurrentUser() : null;
     </div>
 </main>
 
-<footer class="py-4 border-top bg-white mt-auto">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-        <span class="text-muted small">
-            &copy; <?= date('Y') ?> Cur1 Fashion. All rights reserved.
-        </span>
-    </div>
-</footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
 
