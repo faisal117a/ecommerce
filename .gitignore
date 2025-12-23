@@ -35,6 +35,7 @@ htdocs/
 *.sql
 *.db
 *.sqlite
+!cur1_ecommerce.sql
 
 # Node modules (if any)
 node_modules/
